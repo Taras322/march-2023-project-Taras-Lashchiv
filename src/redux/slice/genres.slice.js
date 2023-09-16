@@ -16,8 +16,7 @@ const all = createAsyncThunk(
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
-    }
-    )
+    });
 
 const genresSlice = createSlice({
     name:'genreSlice',

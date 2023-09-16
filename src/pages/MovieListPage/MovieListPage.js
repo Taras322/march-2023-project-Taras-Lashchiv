@@ -4,17 +4,28 @@ import MovieListCard from "../../components/MovieListCard/MovieListCard";
 import MainLayout from "../MainLayout/MainLayout";
 import {useDispatch, useSelector} from "react-redux";
 import {movieActions} from "../../redux/slice/movies.slice";
+import Pagination from "../../components/paginations/Paginations";
+import {useSearchParams} from "react-router-dom";
 
 const MovieListPage = () => {
 
     const dispatch = useDispatch();
     const {movies} = useSelector(state => state.movies);
-
+    const [query, setQuery] = useSearchParams();
+    const page = query.get('page');
 
     useEffect(()=>{
-        dispatch(movieActions.all())
-    },[])
+        if (page === null){
+            setQuery({page:'1'})
+        }
+    },[]);
 
+    useEffect(()=>{
+        if (page !== null){
+            console.log('page',page);
+            dispatch(movieActions.all(+page))
+        }
+    },[page]);
 
 
     return (
@@ -25,6 +36,7 @@ const MovieListPage = () => {
                     movies.map((movie)=> <MovieListCard movie={movie} key={movie.id}/>)
                 }
             </div>
+            <Pagination/>
         </div>
         </MainLayout>
     );

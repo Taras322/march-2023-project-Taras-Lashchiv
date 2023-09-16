@@ -5,7 +5,7 @@ import {Route} from "../../routes/Routes"
 const Header = () => {
     return (
         <div className={css.Header}>
-            <h2><Link to={Route.Home}>Movie React APP</Link></h2>
+            <h2><Link to={Route.Home}>Movie APP</Link></h2>
             <div><Link to={Route.User}>user</Link></div>
             <div><Link to={Route.Genres}>genres</Link></div>
             <div>switcher</div>

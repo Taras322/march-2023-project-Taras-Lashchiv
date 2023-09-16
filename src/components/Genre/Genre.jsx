@@ -1,5 +1,8 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {movieActions} from "../../redux/slice/movies.slice";
+
+
 
 const Genre = ({genre}) => {
     const {name, id} = genre;
@@ -7,8 +10,9 @@ const Genre = ({genre}) => {
     const dispatch = useDispatch();
 
 
+
     const handleClick = () =>{
-        console.log(id);
+        dispatch(movieActions.allMovieByGenres(id))
     };
 
 

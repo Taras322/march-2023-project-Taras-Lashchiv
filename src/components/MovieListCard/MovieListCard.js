@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 
 const MovieListCard = ({movie}) => {
 
-    const {title, backdrop_path, overview, id} = movie;
+    const {title, backdrop_path, id} = movie;
     const navigate = useNavigate();
     const showMovieInfo = () => {
         navigate({pathname:`${id}`}, {state: {...movie}})
@@ -15,7 +15,7 @@ const MovieListCard = ({movie}) => {
         <div className={'movie-card'}>
             <div><img src={posterURL + `${backdrop_path}`} className={'movie-cover'}/></div>
             <h5 className={'movie-title'}>{title}</h5>
-            <button onClick={showMovieInfo}>button</button>
+            <button onClick={showMovieInfo}>About movie</button>
         </div>
     );
 };

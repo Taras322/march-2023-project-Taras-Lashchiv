@@ -21,12 +21,15 @@ const Searcher = () => {
         console.log(state);
     },[state])
     return (
-        <div>
+        <div className={'search-page'}>
             <input type={'text'} placeholder={'search'} onChange={handleSearch} value={search}/>
             <button type={'button'} onClick={handleClick}>search</button>
+            <h3>Results:</h3>
+            <div className='MovieList'>
             {
                 state.map((movie)=> <MovieListCard movie={movie} key={movie.id}/>)
             }
+            </div>
         </div>
     );
 };
