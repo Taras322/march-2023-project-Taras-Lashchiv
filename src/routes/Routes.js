@@ -4,11 +4,14 @@ import React from "react";
 import MovieListPage from "../pages/MovieListPage/MovieListPage";
 import MovieInfoPage from "../pages/MovieInfoPage/MovieInfoPage";
 import User from "../components/User/User";
+import GenreBadge from "../components/GenreBadge/GenreBadge";
 export const Route = {
     Home: '/',
     Movies:'/movies',
     Movie:'/movies/:id',
-    User:'/user'
+    User:'/user',
+    Genres: '/genres',
+    Genre:'/genres/:id'
 }
 
 export const routes = createBrowserRouter([
@@ -28,6 +31,10 @@ export const routes = createBrowserRouter([
     {
         path:Route.User,
         element:<User/>
+    },
+    {
+        path:Route.Genres,
+        element:<GenreBadge/>
     }
 ])
 

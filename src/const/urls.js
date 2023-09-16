@@ -5,6 +5,7 @@ const posterURL = 'https://image.tmdb.org/t/p/w500';
 const urls = {
     discover: '/discover/movie',
     genre: '/genre/movie/list',
+    search:'/search/movie'
 
 }
 

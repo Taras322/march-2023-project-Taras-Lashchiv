@@ -10,5 +10,6 @@ const axiosService = axios.create({baseURL,
 });
 
 export {
-    axiosService
+    axiosService,
+    API_KEY
 }

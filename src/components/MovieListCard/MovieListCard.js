@@ -12,10 +12,9 @@ const MovieListCard = ({movie}) => {
     }
 
     return (
-        <div>
-            <div><img src={posterURL + `${backdrop_path}`}/></div>
-            <div>title: {title}</div>
-            <div>{overview}</div>
+        <div className={'movie-card'}>
+            <div><img src={posterURL + `${backdrop_path}`} className={'movie-cover'}/></div>
+            <h5 className={'movie-title'}>{title}</h5>
             <button onClick={showMovieInfo}>button</button>
         </div>
     );

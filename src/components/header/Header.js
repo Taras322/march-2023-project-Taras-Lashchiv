@@ -6,7 +6,8 @@ const Header = () => {
     return (
         <div className={css.Header}>
             <h2><Link to={Route.Home}>Movie React APP</Link></h2>
-            <div><Link to={Route.Movies}>user</Link></div>
+            <div><Link to={Route.User}>user</Link></div>
+            <div><Link to={Route.Genres}>genres</Link></div>
             <div>switcher</div>
             <div><Link to={Route.Movies}>MOVIES LIST</Link></div>
         </div>

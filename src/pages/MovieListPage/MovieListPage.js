@@ -1,25 +1,30 @@
-import React, {useEffect, useState} from 'react';
-import {movieService} from "../../services/movie.service";
+import React, {useEffect} from 'react';
+
 import MovieListCard from "../../components/MovieListCard/MovieListCard";
-import css from "./Movielist.module.css"
 import MainLayout from "../MainLayout/MainLayout";
+import {useDispatch, useSelector} from "react-redux";
+import {movieActions} from "../../redux/slice/movies.slice";
 
 const MovieListPage = () => {
 
-    const [movies, setMovies] = useState([]);
+    const dispatch = useDispatch();
+    const {movies} = useSelector(state => state.movies);
+
 
     useEffect(()=>{
-        movieService.getAll()
-            .then(value => value.data)
-            .then(value => setMovies(value.results))
-    },[]);
+        dispatch(movieActions.all())
+    },[])
+
+
 
     return (
         <MainLayout>
-        <div className={css.MovieListPage}>
-            {
-                movies.map((movie)=><MovieListCard movie={movie} key={movie.id}/>)
-            }
+        <div className="App">
+            <div className='MovieList'>
+                {
+                    movies.map((movie)=> <MovieListCard movie={movie} key={movie.id}/>)
+                }
+            </div>
         </div>
         </MainLayout>
     );

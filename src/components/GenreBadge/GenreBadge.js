@@ -1,20 +1,28 @@
-import React, {useEffect, useState} from 'react';
-import {movieService} from "../../services/movie.service";
+import React, {useEffect} from 'react';
+
 import Genre from "../Genre/Genre";
+import MainLayout from "../../pages/MainLayout/MainLayout";
+
+import {useDispatch, useSelector} from "react-redux";
+import {genreAction} from "../../redux/slice/genres.slice";
 
 const GenreBadge = () => {
-    const [genres, setGenres] = useState([]);
+
+    const dispatch = useDispatch();
+    const {genres} = useSelector(state => state.genres);
+    console.log(genres);
     useEffect(()=>{
-        movieService.getGenre()
-            .then(value => value.data)
-            .then(value => setGenres(value.genres))
-    })
+        dispatch(genreAction.all())
+    },[])
+
     return (
-        <div>
+        <MainLayout>
+        <div className={'genres'}>
             {
                 genres.map((genre, index)=><Genre genre={genre} key={index}/>)
             }
         </div>
+        </MainLayout>
     );
 };
 
