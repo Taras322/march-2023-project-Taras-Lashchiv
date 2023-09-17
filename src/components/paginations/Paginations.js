@@ -25,11 +25,11 @@ const Pagination = () => {
         }
     }
     return (
-        <div>
+        <div className={'pagination'}>
             <p>1</p>
-            <button onClick={clickPrevPage}>prev</button>
+            <button onClick={clickPrevPage} className={'pagination-button'}>prev</button>
             {page || 0}
-            <button onClick={clickNextPage}>next</button>
+            <button onClick={clickNextPage} className={'pagination-button'}>next</button>
             <p>{total_pages}</p>
         </div>
     );

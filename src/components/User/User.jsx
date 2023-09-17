@@ -4,9 +4,9 @@ import MainLayout from "../../pages/MainLayout/MainLayout";
 const User = () => {
     return (
         <MainLayout>
-        <div>
+        <div className={'app'}>
+            <img src={require('./Avatar.jpeg')}/>
             <h2>Taras</h2>
-            <img src={''}/>
         </div>
         </MainLayout>
     );

@@ -1,11 +1,9 @@
 .MovieList {
-  max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
-
 }
 
 .movie-cover {
@@ -14,12 +12,16 @@
 .genres{
  display: grid;
  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /*height: 100vh;*/
 }
 
 body{
- /*background: #090A0E;*/
- /*color: white;*/
-
+width: 100%;
+    height: 100%;
+ background: #e1ede2;
+}
+#root{
+    height: 100vh;
 }
 .search-page{
     display: flex;
@@ -40,6 +42,120 @@ body{
 
 a{
     text-decoration: none;
+}
+.user-image{
+    border-radius: 50%;
+    width: 50px;
+}
+
+.button-genre{
+    width: 160px;
+    margin: 5px;
+    background-color: #f44336;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+.search-input::-webkit-input-placeholder{
+    color: #B6C0A5;
+    font-style: italic;
+    background: #E0EFCA;
+}
+.search-input{
+    margin-top: 10px ;
+    width: 50%;
+    height: 27px;
+    padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+
+.search-button{
+    margin-top: 10px;
+    width: 80px;
+    height: 42px;
+    border: none;
+    background: #7BA7AB;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.movie-button{
+    width: 150px;
+    background-color: #f44336;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.pagination-button{
+    border: none;
+    width: 80px;
+    height: 30px;
+    background-color: #ff5e36;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+}
+
+
+.theme-switcher label {
+    margin-left: 8px;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.app{
+    height: 100%;
+}
+
+.movie-info-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.movie-info-card-img{
+    width: 600px;
+    height: 400px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    height: 50px;
+    background-color: #242424;
+    color: #e1ede2;
 }
 
 

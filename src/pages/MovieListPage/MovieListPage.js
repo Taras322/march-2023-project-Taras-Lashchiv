@@ -30,7 +30,7 @@ const MovieListPage = () => {
 
     return (
         <MainLayout>
-        <div className="App">
+        <div className="app">
             <div className='MovieList'>
                 {
                     movies.map((movie)=> <MovieListCard movie={movie} key={movie.id}/>)

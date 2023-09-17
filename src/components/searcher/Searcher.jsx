@@ -22,8 +22,8 @@ const Searcher = () => {
     },[state])
     return (
         <div className={'search-page'}>
-            <input type={'text'} placeholder={'search'} onChange={handleSearch} value={search}/>
-            <button type={'button'} onClick={handleClick}>search</button>
+            <input type={'text'} placeholder={'search'} onChange={handleSearch} value={search} className={'search-input'}/>
+            <button type={'button'} onClick={handleClick} className={'search-button'}>search</button>
             <h3>Results:</h3>
             <div className='MovieList'>
             {

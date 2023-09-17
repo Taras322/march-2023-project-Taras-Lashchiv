@@ -18,7 +18,9 @@ const Genre = ({genre}) => {
 
     return (
         <div>
-            <button onClick={handleClick} type={'button'}>{name}</button>
+            <div>
+                <button onClick={handleClick} type={'button'} className={'button-genre'}>{name}</button>
+            </div>
         </div>
 
     );

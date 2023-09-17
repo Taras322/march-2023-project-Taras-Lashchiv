@@ -20,18 +20,21 @@ const GenreBadge = () => {
     },[])
 
     return (
+        <div className={'app'}>
         <MainLayout>
-        <div className={'genres'}>
+
+            <div className={'genres'}>
             {
                 genres.map((genre, index)=><Genre genre={genre} key={index}/>)
             }
-        </div>
+            </div>
             <div className={'MovieList'}>
                 {
                     state.map((movie)=><MovieListCard movie={movie} key={movie.id}/>)
                 }
             </div>
         </MainLayout>
+        </div>
     );
 };
 

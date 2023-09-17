@@ -10,10 +10,11 @@ const MovieInfoPage = () => {
 
     return (
         <MainLayout>
-        <div>
+        <div className={'movie-info-card app'}>
+            <img src={posterURL + `${state.backdrop_path}`} className={'movie-info-card-img'}/>
             <div>{state.title}</div>
             <div>{state.overview}</div>
-            <img src={posterURL + `${state.backdrop_path}`}/>
+            <div>{state.vote_average}</div>
         </div>
         </MainLayout>
     );
